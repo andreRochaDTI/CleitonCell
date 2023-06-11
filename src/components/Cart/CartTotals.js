@@ -3,6 +3,11 @@ import {Link} from 'react-router-dom';
 
 export default function CartTotals({value}) {
     const {cartSubTotal, cartTax, cartTotal,clearCart} = value;
+
+    const buy = () => {
+        window.alert("You'll be redirected to the payment page")
+    }
+
     return <React.Fragment>
        <div className="container">
            <div className="row">
@@ -22,13 +27,23 @@ export default function CartTotals({value}) {
                         <strong>{cartSubTotal}</strong>
                     </h5>
                     <h5>
-                        <span className="text-title">subtotal :</span>
+                        <span className="text-title">shipment  :</span>
                         <strong>{cartTax}</strong>
                     </h5>
                     <h5>
-                        <span className="text-title">subtotal :</span>
+                        <span className="text-title">total :</span>
                         <strong>{cartTotal}</strong>
                     </h5>
+                    <Link to="/payment">
+                    <button
+                            className="btn btn-success text-uppercase mb-3 px-5"
+                            type="button"
+                            onClick={() => {
+                                buy();
+                            }}>
+                            BUY
+                        </button>
+                        </Link>
                </div>
            </div>
        </div>

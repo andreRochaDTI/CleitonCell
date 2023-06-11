@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
 import {ProductConsumer} from '../context';
 import PropTypes from 'prop-types';
 
@@ -12,9 +11,9 @@ export default class Product extends Component {
                <div className="card">
                 <ProductConsumer>
                         {value => (<div className="img-container p-5" onClick={() => value.handleDetail(id)}>
-                            <Link to="/details">
+                            <a href='/details'>
                                 <img src={img} alt="product" className="card-img-top" />
-                            </Link>
+                                </a>
                             <button className="cart-btn" disabled={inCart ? true : false}
                                 onClick={() => {
                                     value.addToCart(id);
