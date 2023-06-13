@@ -1,0 +1,62 @@
+{
+    "multipleQuantitiesOfItems":[
+            {
+                "name":"Google Pixel - Black",
+                "price": "10",
+                "quantity": 8
+            },
+            {
+                "name":"Samsung S7",
+                "price": "16",
+                "quantity": 10
+            },
+            {
+                "name":"HTC 10 - Black",
+                "price": "8",
+                "quantity": 9
+            },
+            {
+                "name":"HTC 10 - White",
+                "price": "18",
+                "quantity": 2
+            },
+            {
+                "name":"HTC Desire 626s",
+                "price": "24",
+                "quantity": 6
+            },
+            {
+                "name":"Vintage Iphone",
+                "price": "17",
+                "quantity": 10
+            },
+            {
+                "name":"Iphone 7",
+                "price": "30",
+                "quantity": 3
+            },
+            {
+                "name":"Smashed Iphone",
+                "price": "2",
+                "quantity": 22
+            }
+    ],
+    "deleteItemsFromCart":
+    [
+        {
+            "name":"Google Pixel - Black",
+            "price": "10",
+            "delete": true
+        },
+        {
+            "name":"HTC Desire 626s",
+            "price": "24",
+            "delete": true
+        },
+        {
+            "name":"Iphone 7",
+            "price": "30",
+            "delete": true
+        }
+    ]
+}
