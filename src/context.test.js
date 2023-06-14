@@ -245,5 +245,37 @@ describe('clearCart', () => {
     expect(instance.state.products[0].count).toBe(0);
     expect(instance.state.products[0].total).toBe(0);
   });
+  // Unit test for calculateDiscount function
+describe('ProductProvider', () => {
+  it('should return true if quantity is equal to minimum quantity', () => {
+      const productProvider = new ProductProvider();
+      const quantity = 10;
+      const minimumQuantity = 10;
+
+      const result = productProvider.calculateDiscount(quantity, minimumQuantity);
+
+      expect(result).toBe(true);
+  });
+
+  it('should return true if quantity is greater than minimum quantity', () => {
+      const productProvider = new ProductProvider();
+      const quantity = 15;
+      const minimumQuantity = 10;
+
+      const result = productProvider.calculateDiscount(quantity, minimumQuantity);
+
+      expect(result).toBe(true);
+  });
+
+  it('should return false if quantity is less than minimum quantity', () => {
+      const productProvider = new ProductProvider();
+      const quantity = 5;
+      const minimumQuantity = 10;
+
+      const result = productProvider.calculateDiscount(quantity, minimumQuantity);
+
+      expect(result).toBe(false);
+  });
+});
 });
   

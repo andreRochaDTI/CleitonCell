@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { BrowserRouter} from "react-router-dom";
 import '@testing-library/jest-dom'
 import Product from '../Product';
 
@@ -13,7 +14,8 @@ describe('Product Component', () => {
   };
 
   it('should render without errors', () => {
-    render(<Product product={product} />);
+    render(<BrowserRouter>
+    <Product product={product} /></BrowserRouter>);
     expect(screen.getByText('Product Title')).toBeInTheDocument();
     expect(screen.getByText('9.99')).toBeInTheDocument();
   });
@@ -35,7 +37,8 @@ describe('Product Component', () => {
   // });
 
   it('should disable cart button if product is already in cart', () => {
-    render(<Product product={{ ...product, inCart: true }} />);
+    render(<BrowserRouter><Product product={{ ...product, inCart: true }} />
+    </BrowserRouter>);
     expect(screen.getByRole('button', { name: 'in Cart' })).toBeDisabled();
   });
 });

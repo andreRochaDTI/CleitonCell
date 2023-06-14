@@ -32,6 +32,9 @@ class ProductProvider extends Component {
         const product = this.state.products.find(item => item.id === id);
         return product;
     };
+    calculateDiscount = (quantity, minimumQuantity) => {
+        return quantity >= minimumQuantity;
+    };
     handleDetail = id => {
         const product = this.getItem(id);
         this.setState(() => {
@@ -175,7 +178,8 @@ class ProductProvider extends Component {
                     increment: this.increment,
                     decrement: this.decrement,
                     removeItem: this.removeItem,
-                    clearCart: this.clearCart
+                    clearCart: this.clearCart,
+                    calculateDiscount: this.calculateDiscount()
                 }}
             >
                 {this.props.children}
